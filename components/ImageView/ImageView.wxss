@@ -1,0 +1,10 @@
+/* ImageView.wxss */
+
+.ImageView-container {
+    border: 2rpx solid red;
+}
+
+.ImageView-show {
+    width: 150rpx;
+    height: 150rpx;
+}

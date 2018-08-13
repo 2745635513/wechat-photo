@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button bindtap='takePhoto'> 调用 </button>
+    <!-- <button bindtap='previewImage'> 预览 </button> -->
+    <button bindtap='modeSwitch'>编辑</button>
+    <button>取消编辑</button>
+    <button>取消编辑</button>
+  </view>
+
+  <view wx:for="{{fileList}}" wx:for-index="idx" wx:for-item="itemName">
+  <ImageView url="{{itemName.filePath}}" editing="{{editing}}"/>
+</view>
+</view>

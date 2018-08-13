@@ -1,0 +1,3 @@
+<view class="{{editing?'ImageView-container':''}}">
+<image src="{{url}}" bindtap="viewImage" class="ImageView-show" />
+</view>

@@ -18,7 +18,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    choose:false
   },
 
   /**
@@ -30,6 +30,19 @@ Component({
         current: '', // 当前显示图片的http链接
         urls: [this.properties.url]
       })
+    },
+    chooseImage:function(){
+      this.setData({
+        choose:!this.data.choose
+      })
+      console.log('choose')
+    },
+    ImageClick:function(){
+      if(this.properties.editing){
+        this.chooseImage()
+      }else{
+        this.viewImage()
+      }
     }
   }
 })

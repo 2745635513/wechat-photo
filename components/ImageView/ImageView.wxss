@@ -4,6 +4,10 @@
     border: 2rpx solid red;
 }
 
+.ImageView-choose {
+    border: 2rpx solid blue;
+}
+
 .ImageView-show {
     width: 150rpx;
     height: 150rpx;

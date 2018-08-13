@@ -6,6 +6,7 @@ Page({
   data: {
     editing:false,
     fileList:[],
+    chooseList:[],
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数

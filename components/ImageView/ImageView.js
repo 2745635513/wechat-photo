@@ -32,9 +32,10 @@ Component({
       })
     },
     chooseImage:function(){
+      this.triggerEvent('chooseInParent', {choose:!this.data.choose,url:this.properties.url})
       this.setData({
         choose:!this.data.choose
-      })
+      })      
       console.log('choose')
     },
     ImageClick:function(){

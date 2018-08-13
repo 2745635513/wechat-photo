@@ -9,6 +9,6 @@
   </view>
 
   <view wx:for="{{fileList}}" wx:for-index="idx" wx:for-item="itemName">
-  <ImageView url="{{itemName.filePath}}" editing="{{editing}}"/>
+  <ImageView url="{{itemName.filePath}}" editing="{{editing}}" bindchooseInParent='chooseImage'/>
 </view>
 </view>

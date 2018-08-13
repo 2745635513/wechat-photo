@@ -20,16 +20,26 @@ Page({
           tempFilePath: tempFilePaths[0],
           success: function (res) {
             var savedFilePath = res.savedFilePath
-            wx.getSavedFileList({
-              success: function (res) {
-                that.setData({
-                  fileList: res.fileList
-                })
-                console.log(res.fileList)
-              }
+            console.log(res,savedFilePath)
+            var fileList=wx.getStorageSync('fileList')||[];            
+            fileList=fileList.concat([savedFilePath])
+            wx.setStorageSync('fileList',fileList);
+            that.setData({
+                    fileList
             })
+            // wx.getSavedFileList({
+            //   success: function (res) {
+            //     that.setData({
+            //       fileList
+            //     })
+            //     console.log(fileList)
+            //   }
+            // })
           }
         })
+      },
+      fail:function(){
+        console.log('fail')
       }
     })    
   },
@@ -47,15 +57,21 @@ Page({
       editing:!this.data.editing
     })
   },
+  chooseImage:function(e){
+    console.log(e.detail)
+  },
   onShow: function () {
     var that = this;
-    wx.getSavedFileList({
-      success: function (res) {
-        that.setData({
-          fileList:res.fileList
-        });        
-        console.log(res.fileList)
-      }
-    })
+    var fileList=wx.getStorageSync('fileList')||[];
+    that.setData({
+      fileList
+    });   
+    console.log(fileList)
+    // wx.getSavedFileList({
+    //   success: function (res) {
+             
+        
+    //   }
+    // })
   },
 })
